@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+</head>
+<body style="text-align: center;">
+  <script>
+  var n = 1;
+  var w = 200;
+  var h = 150;
+  while( n <= 9 ){
+    if( n % 9 == 0 ){
+      document.write( '<img src="https://picsum.photos/'+(w*4)+'/'+h+'?id='+n+'" alt="">' );
+    }else{
+      document.write( '<img src="https://picsum.photos/'+w+'/'+h+'?id='+n+'" alt="">' );
+      }
+    if( n % 4 == 0 ){
+      document.write( '<br>' );
+    }
+    n++;
+    }
+  </script>
+</body>
+</html>
