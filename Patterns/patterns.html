@@ -4,38 +4,22 @@
   <meta charset="UTF-8">
   <title>Document</title>
 </head>
-<body>
+<body style="font-family: monospace;">
   <script>
-    // # # # # # # # # # #
-    // # * # * # * # * # *
-    // # * * * # * * * # *
-
-    // # * # * #
-    // * # * # *
-    // # * # * #
-    // * # * # *
-    // # * # * #
-
-    // var n = 1;
-    // while ( n <= 10 ){
-    //   if ( n % 2 == 0 ){
-    //     document.write("* ");
-    //   } else {
-    //     document.write("# ");
-    //   }
-    //   n++;
-    // }
-    var n = 1;
-    while ( n <= 25 ){
-      if ( n % 2 == 0 ){
-        document.write("* ");
-      } else {
-        document.write("# ");
+    var grid = prompt("Enter the number:");
+    var x = 1;
+    while ( x <= grid ){
+      var y = 1;
+      while( y <= grid ){
+        if((( x % 2 ) && ( y % 2 )) || (( x % 2 == 0 ) && ( y % 2  == 0 ))){
+          document.write("# ");
+        }else {
+          document.write("* ");
+        }
+        y++;
       }
-      if ( n % 5 == 0 ){
-        document.write("<br>");
-      }
-      n++;
+      document.write("<br>");
+      x++;
     }
   </script>
 </body>

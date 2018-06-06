@@ -13,19 +13,27 @@
       var col = 1;
       while( col <= 10 ){
         if(( row == 1 ) || ( row == 10 ) || ( col == 1 ) || ( col == 10 )){
-          document.write("# ");
-        }else {
-          if( row == 11 ){
-            document.write(col + " ")
+          if ( row == 11 ){
+            document.write(col + " ");
+          } else {
+            document.write("# ");
+          }
+        } else {
+          if ( row == 11 ) {
+              document.write(col + " ");
           }
           else {
-            document.write(". ")
+            document.write(". ");
           }
         }
         col++;
       }
       ///////////FINISH/////////////
-      document.write(row + "<br>");
+      if ( row == 11 ){
+        document.write("");
+      } else {
+        document.write(row + "<br>");
+      }
       row++;
     }
     ///////////FINISH/////////////
