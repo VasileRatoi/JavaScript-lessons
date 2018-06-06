@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const PIN = 1234;
+    var   pin;
+    var   n = 0;
+    while( n < 3 ){
+      pin = prompt("YOUR PIN CODE:");
+      if( pin == PIN ){
+        alert("Welcome!");
+        break; // exit
+      } else {
+        alert("Wrong pin! Popitki left:" + (2-n));
+      }
+      n++;
+    }
+    // alert(PIN);
+    // alert(pin);
+  </script>
+</body>
+</html>
