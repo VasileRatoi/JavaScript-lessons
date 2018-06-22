@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //Base class/superclass
+    class Car{
+      //brand,model,year,power,photo
+      constructor(){
+        this.brand = "Mercedes";
+      }
+      about(){
+        alert(`This is a ${this.brand} - CAR!!!`);
+      }
+      render(){
+        // ->to HTML
+      }
+    }
+    //extended class/inheriting
+    class SportCar extends Car{
+      //acceleration
+      // about(){
+      //   alert("This is a SPORTCAR!!!");
+      // }
+    }
+
+
+    //creating objects//
+    var c = new Car();
+    c.about();
+    var sc = new SportCar();
+    sc.about();
+
+
+
+    // class HeavyCar extends Car{
+    //   //capacity
+    // }
+    // class MilitaryCar extends Car{
+    //   //armour
+    // }
+
+    //               ---> SportCar        ---> object1,object2
+    //Object-> Car   ---> HeavyCar        ---> object3,object4
+    //               ---> MilitaryCar     ---> object5,object6
+
+  </script>
+</body>
+</html>
