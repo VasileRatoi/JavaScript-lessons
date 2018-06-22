@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body style="text-align: center;">
+  <script>
+    class Product{
+      constructor( name, photo_big, photo_1, photo_2, photo_3, price, manufacturer, year ){
+        if ( name != "" ){
+          this.name = name;
+        } else {
+          alert("The name must be filled in");
+        }
+        if ( photo_big != "" ){
+          this.photo_big = photo_big;
+        } else {
+          alert("Photo big must be filled in");
+        }
+        if ( (price >= 1) && (price <= 1000000) ){
+          this.price = price;
+        } else {
+          alert("The price is not correct");
+        }
+
+        if (photo_1 == ""){
+          this.photo_1 = "https://picsum.photos/g/200/200?id=1";
+        } else {
+          this.photo_1 = photo_1;
+        }
+        if (photo_2 == ""){
+          this.photo_2 = "https://picsum.photos/g/200/200?id=2";
+        } else {
+          this.photo_2 = photo_2;
+        }
+        if (photo_3 == ""){
+          this.photo_3 = "https://picsum.photos/g/200/200?id=3";
+        } else {
+          this.photo_3 = photo_3;
+        }
+        if (manufacturer == ""){
+          this.manufacturer = "Apple";
+        } else {
+          this.manufacturer = manufacturer;
+        }
+        if ( (year == undefined) || (year == "")){
+          this.year = "2018";
+        } else {
+          this.year = year;
+        }
+      }
+
+
+
+      render ( mode ){
+        if ( mode == "teaser" ){
+          document.write(`<p>Name: ${this.name}</p><p>Photo big:</p><img width="500px" src="${this.photo_big}"><p>Price: ${this.price}$</p>`);
+        } else if ( mode == "full" ){
+          document.write(`<p>Name: ${this.name}</p><p>Photo big:</p><img width="500px" src="${this.photo_big}"><div style=""><p>Photo_1:</p><img width="200px" src="${this.photo_1}"><p>Photo_2:</p><img width="200px" src="${this.photo_2}"><p>Photo_3:</p><img width="200px" src="${this.photo_3}"></div><p>Price: ${this.price}$<p>Manufacturer: ${this.manufacturer}</p><p>Year: ${this.year}</p>`);
+        } else {
+          alert("Please enter teaser or full!");
+        }
+      }
+    }
+
+    var product1 = new Product("iPhone 3", "https://d3nevzfk7ii3be.cloudfront.net/igi/kBkXWHW5ImOiKqgM.large", "", "", "", "100", "", "2008");
+
+    var mode = prompt("Please enter the way you want to display:");
+
+    product1.render(mode);
+  </script>
+</body>
+</html>

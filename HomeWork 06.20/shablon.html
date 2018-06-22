@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shablon</title>
+  </head>
+  <body>
+    <script>
+      // Declare a class
+      class User{
+        // structure
+        constructor( email, login, avatar, password ){
+          this.email = email;
+          this.login = login;
+          this.avatar = avatar;
+          if ( password == undefined ){
+            this.password = "12345";
+          } else {
+            this.password = password;
+          }
+        }
+        render(){
+          document.write(`<h2>${this.login}</h2>`);
+          document.write(`<h2>${this.email}</h2>`);
+          document.write(`<img src="${this.avatar}">`);
+        }
+      }
+
+      // using the CLASS
+      var user1 = new User("blabla@mail.com", "iurik77", "https://picsum.photos/100/100?=2");
+      var user2 = new User("blabla123@mail.com", "murik88", "https://picsum.photos/100/100?=3" ,"abc1234");
+      // console.log( user1 );
+      // console.log( user2 );
+      user1.render();
+      user2.render();
+    </script>
+  </body>
+</html>

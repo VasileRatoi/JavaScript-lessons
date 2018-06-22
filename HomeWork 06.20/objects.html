@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // nav -> object ... <nav id="my-nav" style="bg">menu... </nav>
+    var nav = {
+      //properties
+      id: "main-navigation",
+      style: {
+        color: "red",
+        border: "1px solid black",
+        margin: "20px"
+      },
+      content: {
+        href: "/about.html",
+        text: "About us"
+      },
+      // method()
+      render: function(){
+        document.write(`<nav id="${this.id}" style="border: ${this.style.border}; margin: ${this.style.margin}">
+          <a href="${this.content.href}" style="color: ${this.style.color};">${this.content.text}</a>
+        </nav>`);
+      }
+    };
+    nav.render();
+    // alert( nav.style.margin );
+  </script>
+</body>
+</html>
