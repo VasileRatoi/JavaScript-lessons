@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body style="text-align: center;">
+  <script>
+    //Base class/superclass
+    class Car{
+      //brand,model,year,power,photo
+      constructor( model, power, photo, acceleration, capacity, armour ){
+        this.brand = "Mercedes";
+        this.model = model;
+        this.year = "2015";
+        this.power = power;
+        this.photo = photo;
+        this.acceleration = acceleration;
+        this.capacity = capacity;
+        this.armour = armour;
+      }
+      about(){
+        alert(`This is a ${this.brand} - Car!!! Model is ${this.model}. Year - ${this.year}. The power of this is - ${this.power}.`);
+      }
+      render(){
+        document.write(`
+          <img width="400px" src="${this.photo}" alt="" />
+          <p>The brand of this car is: ${this.brand}</p>
+          <p>The model is: ${this.model}</p>
+          <p>Year of car is: ${this.year}</p>
+          <p>The power of car is: ${this.power}</p>
+          `);
+      }
+    }
+    //extended class/inheriting
+    class SportCar extends Car{
+      //acceleration
+      about(){
+        alert(`This is a ${this.brand} - Sport Car!!! Model is ${this.model}. Year - ${this.year}. The power of this is - ${this.power}. Acceleration is - ${this.acceleration}`);
+      }
+      render(){
+        document.write(`
+          <img width="400px" src="${this.photo}" alt="" />
+          <p>The brand of this car is: ${this.brand}</p>
+          <p>The model is: ${this.model}</p>
+          <p>Year of car is: ${this.year}</p>
+          <p>The power of car is: ${this.power}</p>
+          <p>Acceleration is: ${this.acceleration}</p>
+          `);
+      }
+    }
+    class HeavyCar extends Car{
+      //capacity
+      about(){
+        alert(`This is a ${this.brand} - Heavy Car!!! Model is ${this.model}. Year - ${this.year}. The power of this is - ${this.power}. Capacity is - ${this.capacity}`);
+      }
+      render(){
+        document.write(`
+          <img width="400px" src="${this.photo}" alt="" />
+          <p>The brand of this car is: ${this.brand}</p>
+          <p>The model is: ${this.model}</p>
+          <p>Year of car is: ${this.year}</p>
+          <p>The power of car is: ${this.power}</p>
+          <p>Capacity is: ${this.capacity}</p>
+
+          `);
+      }
+    }
+    class MilitaryCar extends Car{
+      //armour
+      about(){
+        alert(`This is a ${this.brand} - Military Car!!! Model is ${this.model}. Year - ${this.year}. The power of this is - ${this.power}. Armour is - ${this.armour}`);
+      }
+      render(){
+        document.write(`
+          <img width="400px" src="${this.photo}" alt="" />
+          <p>The brand of this car is: ${this.brand}</p>
+          <p>The model is: ${this.model}</p>
+          <p>Year of car is: ${this.year}</p>
+          <p>The power of car is: ${this.power}</p>
+          <p>Armour is: ${this.armour}</p>
+          `);
+      }
+    }
+    //creating objects//
+    var c = new Car( "e220", "250hp", "http://cdn1.autoexpress.co.uk/sites/autoexpressuk/files/rn1_5741.jpg" );
+    // c.about();
+    // c.render();
+    var sc = new SportCar( "C300", "540hp", "https://5a87f1f3bad31deab63e-ffe564fbe9009979e8a18a40d3243e7d.ssl.cf1.rackcdn.com/55SWF4JB3JU235607/4c77bd36531519943004f206d7c0e4b4.jpg", "320km/h" );
+    // sc.about();
+    // sc.render();
+    var hc = new HeavyCar( "A157", "300hp", "https://www.carsbase.com/photo/Mercedes_Benz-CapaCity_mp35_pic_60733.jpg", "", "100 peoples" );
+    // hc.about();
+    // hc.render();
+    var mc = new MilitaryCar( "G-Class 6×6", "600hp", "http://latestsupercar.com/wp-content/uploads/2014/06/Seat-fitting-at-the-Elite-Benz-Mercedes-G-Class-6x6-Military-f.jpg", "", "", "like a tank" );
+    mc.about();
+    mc.render();
+    //               ---> SportCar        ---> object1,object2
+    //Object-> Car   ---> HeavyCar        ---> object3,object4
+    //               ---> MilitaryCar     ---> object5,object6
+  </script>
+</body>
+</html>
