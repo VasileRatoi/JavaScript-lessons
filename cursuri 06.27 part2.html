@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // fixed
+    const USERNAME = "admin";
+    const PASSWORD = "123456";
+
+    // user input
+    var username = prompt("Your Login:");
+    var password = prompt("Your Password:");
+
+    // 1) Caps
+    if( username.toUpperCase() == username ){
+      alert("Your CAPS might be active!");
+    }
+    // 2) Whitespace
+    username = username.trim(); //sterge space-ul dinainte si dupa username
+
+    if ( username == USERNAME && password == PASSWORD ){
+      alert("Welcome!");
+    } else {
+      alert("Denied!");
+    }
+  </script>
+</body>
+</html>

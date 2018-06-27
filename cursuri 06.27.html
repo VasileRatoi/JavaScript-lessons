@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var url = prompt("Enter adress:"); // << string
+    // 1) external/local resource
+    if( url.startsWith("https") ){
+      console.info("An external resource with a security!");
+    } else if( url.startsWith("http") ){
+      console.warn("An external resource without a security!")
+    } else{
+      console.log("A local resource!");
+    }
+  </script>
+</body>
+</html>

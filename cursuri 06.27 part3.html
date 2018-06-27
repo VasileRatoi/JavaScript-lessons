@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var email = prompt("your email adress?");
+    // validate email adress
+    if(
+      email.indexOf("@") > 0
+      &&
+      (email.indexOf(".") > email.indexOf("@") + 1)
+      &&
+      // email.indexOf(".") != email.length - 1
+      !email.ends.With(".")
+    ){
+      alert("Adress ok!");
+    } else{
+      alert("Invalid email adress!");
+    }
+  </script>
+</body>
+</html>
