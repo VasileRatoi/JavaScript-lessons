@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var sms = "Hi, what time? 16:00? Call me on 069522545!!! asap!";
+    alert( sms.replace(/\d{9}/, "***") ); // /\d{9}/ gaseste 9 cifre
+
+    //regexlib.com
+    /* HomeWork */
+    var message = prompt("enter a message!");
+    alert( "My email adress is " + message.replace(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, "***") );
+    //regexlib.com , message.replace()
+  </script>
+</body>
+</html>
