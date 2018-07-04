@@ -1,0 +1,30 @@
+#farm{
+  height: 50px;
+  border-bottom: 5px solid green;
+}
+
+#farm .box{
+  border: 1px solid #cdc;
+  width: 48px;
+  height: 48px;
+  float: left;
+}
+#farm .corn {
+  background-image: url("img/corn.png");
+}
+
+#farm .potato{
+  background-image: url("img/potato.png");
+}
+#farm .tomato{
+  background-image: url("img/tomato.png");
+}
+
+/*@keyframes rot{
+  0%{
+
+  }
+  100%{
+
+  }
+}*/
