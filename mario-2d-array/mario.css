@@ -1,0 +1,25 @@
+#map {
+  width: 500px;
+  height: 500px;
+  border: 5px solid green;
+}
+
+#map div{
+  width: 48px;
+  height: 48px;
+  border: 1px solid lightgreen;
+  float: left;
+}
+
+#map .player{
+  background-image: url(img/mario.png);
+}
+#map .coin{
+  background-image: url(img/coin.png);
+}
+#map .bomb{
+  background-image: url(img/bomb.png);
+}
+#map .wall{
+  background-image: url(img/wall.png);
+}
