@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM EXAMPLE</title>
+</head>
+<body>
+
+  <input type="text" placeholder="ypur name pls...">
+  <button onclick="say();">SAY IT!</button>
+  <div id="message">
+
+  </div>
+  <script>
+    function say(){
+      // 1) gasim primul input
+      var input = document.body.firstElementChild;
+      //        = document.querySelector('input');
+      var name = input.value;
+      // copiem ce se introduce in input
+      var div = document.getElementById('message');
+      div.innerHTML = `Hello, ${name}!`;
+    }
+  </script>
+
+</body>
+</html>

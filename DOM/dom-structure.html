@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Hierarchy Example</title>
+</head>
+<body>
+  <h1><i>DOM</i> <small>Hierarchy Example</small></h1>
+  <h2>Some Tips</h2>
+  <ul>
+    <li>.parentElement</li>
+    <li>.previousElementSibling</li>
+    <li>.nextElementSibling</li>
+    <li>.children[]</li>
+    <li>.firstElementChild</li>
+    <li>.lastElementChild</li>
+  </ul>
+  <script>
+    // 1) De citit ce se afla in h2 .innerHTML
+    document.body.children[1].innerHTML
+    document.body.firstElementChild.nextElementSibling.innerHTML
+    // 2) De citit ce se afla in <i>
+    document.body.children[0].firstElementChild.innerHTML
+    document.body.firstElementChild.children[0].innerHTML
+    // 3) De citit ce se afla in al 5lea <li>
+    document.body.children[2].children[4].innerHTML
+    document.body.children[1].nextElementSibling.children[4].innerHTML
+    // OLD
+    document.getElementById('my-id') -> Object / null
+    document.getElementsByClassName('my-class') -> [Object] / []
+    document.getElementsByTagName('ul') -> [Object] / []
+    // NEW
+    document.querySelector("css formula") -> Object / null
+    document.querySelectorAll("css formula")  -> [Object] / []
+  </script>
+</body>
+</html>
