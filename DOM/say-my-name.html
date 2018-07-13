@@ -6,7 +6,7 @@
 </head>
 <body>
 
-  <input type="text" placeholder="ypur name pls...">
+  <input type="text" placeholder="your name pls...">
   <button onclick="say();">SAY IT!</button>
   <div id="message">
 
@@ -18,8 +18,17 @@
       //        = document.querySelector('input');
       var name = input.value;
       // copiem ce se introduce in input
+      name.trim();
+      // scoatem space-ul dinainte si de la urma
       var div = document.getElementById('message');
-      div.innerHTML = `Hello, ${name}!`;
+      if ( name == "" || name == " " ){
+        alert("Please enter your name!");
+        input.style.border = '1px solid red';
+      } else {
+        div.innerHTML = `Hello, ${name}!`;
+        input.style.border = '1px solid #999';
+      }
+
     }
   </script>
 
