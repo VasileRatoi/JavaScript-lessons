@@ -1,4 +1,6 @@
 var road   = document.getElementById('road');
+var light1 = document.createElement('div');
+var light2 = document.createElement('div');
 var y      = 0;
 var speed  = 5;
 var lights = false;
@@ -11,8 +13,6 @@ function createCar(){
 }
 
 function createLights(){
-  var light1 = document.createElement('div');
-  var light2 = document.createElement('div');
   light1.className = 'light';
   light2.className = 'light';
   car.appendChild( light1 );
@@ -35,11 +35,15 @@ function action(){
   if ( event.keyCode == 76 ){
     lights = !lights;
   }
+  if ( lights == true ){
+    createLights();
+  } else if ( lights == false ){
+    car.removeChild( light1 );
+    car.removeChild( light2 );
+  }
 }
 
-if ( lights == true ){
-  createLights();
-}
+
 
 
 setInterval ( move, 20 );
