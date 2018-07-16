@@ -37,7 +37,7 @@ function action(){
   }
   if ( lights == true ){
     createLights();
-  } else if ( lights == false ){
+  } else {
     car.removeChild( light1 );
     car.removeChild( light2 );
   }
