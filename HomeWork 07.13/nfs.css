@@ -26,19 +26,21 @@
   background-size: cover;
   /* filter: drop-shadow(-20px 10px 20px #000); */
   /* filter - drop-shadow */
+  transition: 0.2s;
 }
 .light{
   width: 0px;
   height: 0px;
-  border-top: 200px solid rgba(249, 249, 249, 0.50);
+  border-top: 200px solid rgba(249, 252, 58, 0.50);
   border-right: 33px solid transparent;
   border-left: 33px solid transparent;
   position: absolute;
+  mix-blend-mode: color-dodge;
 }
 .light:first-child{
   top: -160px;
 }
 .light:last-child{
   top: -160px;
-  left: 66px;
+  left: 64px;
 }
