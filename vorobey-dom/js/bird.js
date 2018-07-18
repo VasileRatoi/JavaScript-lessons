@@ -12,6 +12,9 @@ class Bird{
     this.div.setAttribute('class', `bird ${this.color}` );
     document.body.firstElementChild.appendChild( this.div );
     // position. left, top
+
+    this.div.style.top = `${this.top}px`;
+    this.div.style.left = `${this.left}px`;
   }
 }
 
