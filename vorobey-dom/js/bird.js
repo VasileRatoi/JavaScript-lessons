@@ -2,8 +2,8 @@
 class Bird{
   // creaza obiectul
   constructor(){
-    this.top = Math.round( 500 * Math.random() );
-    this.left = Math.round( 500 * Math.random() );
+    this.top = Math.round( (500 - 50) * Math.random() );
+    this.left = Math.round( (500 - 50) * Math.random() );
     this.color = 'red';
   }
   // Afiseaza pasarea in html
