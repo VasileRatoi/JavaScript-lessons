@@ -6,4 +6,5 @@ body {
   height: 500px;
   border: 5px solid red;
   position: relative;
+  cursor: url(../img/target.png) 24 24, auto;
 }
