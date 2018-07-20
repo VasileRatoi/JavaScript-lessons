@@ -8,3 +8,8 @@ body {
   position: relative;
   cursor: url(../img/target.png) 24 24, auto;
 }
+#panel{
+  width: 510px;
+  height: 30px;
+  background-color: #aaa;
+}

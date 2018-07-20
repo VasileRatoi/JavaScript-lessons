@@ -20,11 +20,11 @@ class Bird{
   }
   fly(){
     var self = this;
-    setInterval(function(){
+    this.timer = setInterval(function(){
       if ( self.left > (250 + Math.random() * 200) || self.left < Math.random() * 200 ){
         self.speed *= -1;
         if( Math.abs(self.speed) < 20 ){
-          self.speed *= 1.5;
+          self.speed *= 1;
         }
       }
       //// functia in functie si atunci el nu vede this asa ca o salvam in prima functie in variabila
@@ -32,5 +32,13 @@ class Bird{
       self.div.style.left = `${self.left}px`;
       console.log(self.left);
     },20);
+  }
+  die(){
+    this.div.classList.add('dying');
+    var self = this;
+    clearInterval( this.timer );
+    setTimeout( function(){
+        self.div.parentElement.removeChild( self.div );
+    }, 500 )
   }
 }
