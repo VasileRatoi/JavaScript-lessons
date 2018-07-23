@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <select id="languages" onchange="remember();">
+    <option value="0">-- choose language --</option>
+    <option value="1">Russiaselectedn</option>
+    <option value="2">Ukranian</option>
+    <option value="3">English</option>
+    <option value="4">French</option>
+    <option value="5">Romanian</option>
+  </select>
+
+  <script>
+    var languages = [
+      "-- choose language --",
+      "Russian",
+      "Ukranian",
+      "English",
+      "French",
+      "Romanian"
+    ];
+
+
+    function remember(){
+      var select = document.getElementById('languages');
+      localStorage.setItem( 'lang', select.value );
+      // alert( languages[select.value] );
+    }
+
+    function setLanguage(){
+      var lang = +localStorage.getItem('lang');
+      var select = document.getElementById('languages');
+      select.children[ lang ].selected = true;
+    }
+    setLanguage();
+
+  </script>
+
+</body>
+</html>

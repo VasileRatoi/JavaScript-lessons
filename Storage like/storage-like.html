@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <button onclick="like();">LIKE</button>
+
+  <script>
+    var likes = +localStorage.getItem('liked');
+
+
+    function like(){
+      likes++;
+      localStorage.setItem( 'liked', likes );
+      if( likes >= 1 ){
+        var h1 = document.createElement('h1');
+        document.body.appendChild(h1);
+        h1.innerHTML = "You've liked this page";
+      }
+    }
+
+    // De facut sa nu apara multe h1
+    // sa apara in buton likeurile: ex Likes 1, Likes 2
+
+  </script>
+</body>
+</html>
