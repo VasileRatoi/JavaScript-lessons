@@ -3,28 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <style>
+    body{
+      min-width: 300px;
+    }
+    button{
+      width: 200px;
+      height: 30px;
+      margin-top: 200px;
+      margin-left: calc(50% - 100px);
+      outline: none;
+      border: 0;
+      border-radius: 10px;
+      cursor: pointer;
+      background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+      color: #fff;
+      font-family: cursive;
+    }
+    button:hover{
+      box-shadow: 1px 1px 1px 0 #777;
+    }
+    h1{
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
-  <button onclick="like();">LIKE</button>
+  <button onclick="like();" id="button">LIKE</button>
 
   <script>
+    var button = document.querySelector('button');
     var likes = +localStorage.getItem('liked');
-
+    var h1 = document.createElement('h1');
+    if ( localStorage.getItem( 'liked' ) == null ){
+      button.innerHTML = "LIKE";
+    } else {
+      button.innerHTML = "LIKES " + localStorage.getItem( 'liked' );
+    }
 
     function like(){
       likes++;
       localStorage.setItem( 'liked', likes );
       if( likes >= 1 ){
-        var h1 = document.createElement('h1');
-        document.body.appendChild(h1);
-        h1.innerHTML = "You've liked this page";
+        document.body.appendChild(h1).innerHTML = "You've liked this page";
+        button.innerHTML = "LIKES " + likes;
       }
     }
 
     // De facut sa nu apara multe h1
     // sa apara in buton likeurile: ex Likes 1, Likes 2
-
   </script>
 </body>
 </html>

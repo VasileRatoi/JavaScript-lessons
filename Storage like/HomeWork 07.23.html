@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>  
+</head>
+<body>
+  <div>
+    <h2>CREATE AN ACCOUNT</h2>
+    <input type="text" placeholder="firstname" id="first"><br>
+    <input type="text" placeholder="lastname" id="last"><br>
+    <select id="gender">
+      <option value="m">male</option>
+      <option value="f">female</option>
+    </select>
+    <button onclick="save();">SAVE</button>
+  </div>
+
+  <script>
+    var first  = document.getElementById('first');
+    var last   = document.getElementById('last');
+    var gender = document.getElementById('gender');
+    function save(){
+      var person = {
+        firstname: first.value,
+        lastname: last.value,
+        gender: gender.value
+      };
+      localStorage.setItem( 'person', JSON.stringify( person ) );
+      // JSON.parse( localStorage.getItem('person') );
+    }
+  </script>
+
+</body>
+</html>
