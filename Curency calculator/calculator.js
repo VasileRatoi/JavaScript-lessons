@@ -10,13 +10,16 @@ function load(){
         xhr.onload = function(){
             // Convertam JSON in obiect
             var data = JSON.parse( xhr.responseText );
-            // console.log( data.rates.MDL );
+            console.log( data.rates );
             eur_to_mdl = data.rates.MDL;
 
             // incarcam toate valutele in select
             var rates = Object.keys( data.rates );
-            for(var i = 0; i<rates.length;i++){
-                rates[i];
+            for(var i = 0; i < rates.length; i++){
+                var opt = document.createElement('option');
+                opt.innerHTML = rates[i];
+                var select = document.getElementById('to_currency');
+                select.appendChild(opt);                    
                 // Prin createelement si appendchild de adaugat in option
             }
         };
