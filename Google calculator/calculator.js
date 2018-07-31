@@ -7,16 +7,20 @@ function calculate(){
     var from   = document.getElementById('first').value;
     var to     = document.getElementById('second').value;
     var result = document.getElementById('result');
+    var lang   = document.getElementById('lang').value;
+    var mode   = document.getElementById('mode').value;
     var xhr = new XMLHttpRequest();
     xhr.open( 
         "GET", 
         URL + '?origins=' + from
             + '&destinations=' + to
             + '&key=' + KEY
-            + '&language=ro'
+            + '&language=' + lang
+            + '&mode=' + mode
     );
     xhr.onload = function(){
         var data = JSON.parse( xhr.responseText );
+        console.log(data);
         if ( data.rows[0].elements[0].status == "NOT_FOUND" ){
             result.innerHTML = "Sorry that city doesn't exist!";
         } else {
@@ -25,7 +29,7 @@ function calculate(){
         
     };
     xhr.send();
-
+    
 }
 
 // select (language)
