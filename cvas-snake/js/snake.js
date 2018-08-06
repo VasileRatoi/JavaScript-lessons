@@ -19,14 +19,14 @@ class Snake{
                     image_head.src = this.icon_head;
                     var self = this;
                     image_head.onload = function(){
-                    self.canvas.drawImage(image_head,self.segments[0].x,self.segments[0].y);
+                        self.canvas.drawImage(image_head,self.segments[0].x,self.segments[0].y);
                     }        
             } else {
                 var image_tail = new Image();
                     image_tail.src = this.icon_tail;
                     var self = this;
                     image_tail.onload = function(){
-                    self.canvas.drawImage(image_tail,self.segments[1].x,self.segments[1].y);
+                        self.canvas.drawImage(image_tail,self.segments[1].x,self.segments[1].y);
                     }   
             }
             this.canvas.fillRect(this.segments[i].x,this.segments[i].y,24,24);

@@ -13,5 +13,7 @@ function startGame(){
     var bomb = new Bomb(canvas);
         bomb.render();
         setTimeout(function(){ bomb.clear();}, 1000);
+    var mouse = new Mouse(canvas);
+        mouse.render();
 }
 startGame();
