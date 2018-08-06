@@ -18,4 +18,10 @@ class Mouse{
             }              
             
     }   
+
+    // life cycle
+    live(){
+        var self = this;
+        setInterval(function(){ self.render(); }, 100);
+    }
 }
