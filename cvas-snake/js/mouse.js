@@ -5,6 +5,7 @@ class Mouse{
         this.y = randCoord();
         this.direction = 'up';
         this.canvas = canvas;
+        this.who = 'mouse';
     }
     // render to canvas
     render(){
@@ -22,6 +23,17 @@ class Mouse{
     // life cycle
     live(){
         var self = this;
-        setInterval(function(){ self.render(); }, 100);
+        self.timer = setInterval(function(){ self.render(); }, 100);
     }
+
+    //
+    die(){
+        clearInterval(this.timer);
+    }
+    // timeout or interval - 20s, 30s
+    teleport(){
+
+    }
+
+    // placeMice(), placeBomb() - if()
 }

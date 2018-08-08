@@ -1,13 +1,12 @@
 // snake component
 class Snake{
-    constructor(canvas){
-        this.icon_head = 'img/snake.png';
-        this.icon_tail = 'img/tail.png';
+    constructor(canvas){        
         this.canvas = canvas;
         this.speed = 2;
         this.segments = [
             { x: randCoord(), y: randCoord(), d: 'u'}
         ];
+        this.who = 'snake';
     }
 
     // movement
@@ -32,21 +31,17 @@ class Snake{
 
         // segments
         for( var i = 0; i < this.segments.length; i++ ){
-            if ( i == 0 ) {
-                var image_head = new Image();
-                    image_head.src = this.icon_head;
-                    var self = this;
-                    image_head.onload = function(){
-                        self.canvas.drawImage(image_head,self.segments[0].x,self.segments[0].y);
-                    }        
-            } else {
-                var image_tail = new Image();
-                    image_tail.src = this.icon_tail;
-                    var self = this;
-                    image_tail.onload = function(){
-                        self.canvas.drawImage(image_tail,self.segments[1].x,self.segments[1].y);
-                    }   
-            }
+            var src = 'img/' + ( i == 0 ? 'snake' : 'tail' ) + '-' + this.segments[i].d + '.png';
+           
+            var image = new Image();
+                image.src = src;
+                var self = this;
+              
+                image.onload = function(){    
+                    
+                    self.canvas.drawImage(this.image,self.segments[this.i].x,self.segments[this.i].y);
+                }.bind( {i:i, image:image} )        
+            
             this.canvas.fillRect(this.segments[i].x,this.segments[i].y,24,24);
         }
 
@@ -69,7 +64,7 @@ class Snake{
                 new_y = new_y < minLimit() ? new_y = maxLimit(): new_y;
             break;
             case 'r':
-                new_x = head.x + 25;
+                new_x = head.x + 24;
                 new_x = new_x > maxLimit() ? new_x = minLimit(): new_x;
             break;
             case 'd':
@@ -84,23 +79,26 @@ class Snake{
             d: head.d 
         });
 
-        // intersects items?
-        if ( samePlace(this.segments[0], mouse) ){
-            
-        } else {
-            this.segments.pop();
-        }
 
-        if ( samePlace(this.segments[0], bomb) ){
-            if ( this.segments.length <= 0 ){
-                alert('GAME OVER');                
-            } else{
-                setTimeout(function(){ bomb.clear();}, 10);
-                this.segments.pop();
-                this.segments.pop();
-            }
+        for( var j = 0; j < items.length; j++ ){
+            if ( samePlace(this.segments[0], items[j]) ){
+                if(items[j].who == 'mouse'){
+                    this.segments.push( this.segments[this.segments.length-1] );
+                    items[j].die();
+                    items.splice(j,1);
+                    placeMice();
+                } else if(items[j].who == 'bomb'){
+                    this.segments.pop();
+                    this.segments.pop();
+                }
+            } else {
+                
+            }    
             
-        } 
+        }
+        this.segments.pop();
+        // intersects items?
+        
         
 
         this.render();

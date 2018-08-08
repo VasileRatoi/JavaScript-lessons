@@ -3,6 +3,9 @@ var snake;
 var mouse;
 var items = []; // snake, bombs, mouses
 
+// HomeWork4 ---> save to localStorage / load from
+// localStorage.setItem('game', JSON.stringify(items));
+
 ////////////////////////Helpers/////////////////////////
 function randCoord(){
     return Math.floor( Math.random() * maxLimit() / 24 ) * 24 ;
@@ -15,6 +18,13 @@ function minLimit(){
 }
 function samePlace(item1, item2){
     return item1.x == item2.x && item1.y == item2.y;  //daca apara 2 in acelasi loc <<
+}
+function placeMice(){
+    var mouse = new Mouse(canvas);
+        mouse.render();
+        mouse.live();
+
+    items.push(mouse);
 }
 ////////////////////////Helpers/////////////////////////
 
@@ -49,9 +59,7 @@ function startGame(){
         bomb.render();
         items.push(bomb);
         // setTimeout(function(){ bomb.clear();}, 1000);
-        mouse = new Mouse(canvas);
-        mouse.render();
-        mouse.live();
-        items.push(mouse);
+        placeMice();
+       
 }
 startGame();

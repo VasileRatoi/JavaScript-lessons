@@ -5,6 +5,7 @@ class Bomb{
         this.y = randCoord();
         this.direction = 'up';
         this.canvas = canvas;
+        this.who = 'bomb';
     }
     // render to canvas
     render(){
@@ -21,5 +22,10 @@ class Bomb{
     // clear it's place
     clear(){
         this.canvas.clearRect(this.x, this.y, 24, 24);
+    }
+
+    explode(){
+        // .......
+        // sa apara iconca vzriva prin timeout
     }
 }
