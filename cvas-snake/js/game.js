@@ -48,11 +48,10 @@ function startGame(){
         bomb = new Bomb(canvas);
         bomb.render();
         items.push(bomb);
-        setTimeout(function(){ bomb.clear();}, 1000);
+        // setTimeout(function(){ bomb.clear();}, 1000);
         mouse = new Mouse(canvas);
         mouse.render();
         mouse.live();
-
         items.push(mouse);
 }
 startGame();

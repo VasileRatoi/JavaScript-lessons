@@ -4,7 +4,7 @@ class Snake{
         this.icon_head = 'img/snake.png';
         this.icon_tail = 'img/tail.png';
         this.canvas = canvas;
-        this.speed = 1.5;
+        this.speed = 2;
         this.segments = [
             { x: randCoord(), y: randCoord(), d: 'u'}
         ];
@@ -91,6 +91,16 @@ class Snake{
             this.segments.pop();
         }
 
+        if ( samePlace(this.segments[0], bomb) ){
+            if ( this.segments.length <= 0 ){
+                alert('GAME OVER');                
+            } else{
+                setTimeout(function(){ bomb.clear();}, 10);
+                this.segments.pop();
+                this.segments.pop();
+            }
+            
+        } 
         
 
         this.render();
